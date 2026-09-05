@@ -1,0 +1,61 @@
+{
+ "sample_rate_fps": 10,
+ "rows": 11689,
+ "columns": [
+  {
+   "column": "frame_delta",
+   "description": "0.1초 간격 프레임 간 평균 RGB 차이",
+   "samples": 11688
+  },
+  {
+   "column": "luma_mean",
+   "description": "프레임 평균 휘도 0-255",
+   "samples": 11689
+  },
+  {
+   "column": "luma_spatial_std",
+   "description": "프레임 내 휘도 표준편차(공간 대비)",
+   "samples": 11689
+  },
+  {
+   "column": "sharpness",
+   "description": "그래디언트 에너지(고주파 선명도)",
+   "samples": 11689
+  },
+  {
+   "column": "sharpness_dip_ratio",
+   "description": "국소 선명도 / 주변 중앙값 — 디졸브 판별 지표",
+   "samples": 11689
+  },
+  {
+   "column": "ssm_novelty",
+   "description": "자기유사도 노벨티(±1.6초 체커보드 커널)",
+   "samples": 11689
+  },
+  {
+   "column": "straddle_distance",
+   "description": "±0.5초 히스토그램 코사인 거리 — 장면 확정 지표",
+   "samples": 11689
+  },
+  {
+   "column": "pan_dx",
+   "description": "위상상관 수평 변위 px(96px 폭 기준)",
+   "samples": 11689
+  },
+  {
+   "column": "pan_dy",
+   "description": "위상상관 수직 변위 px",
+   "samples": 11689
+  },
+  {
+   "column": "audio_rms_dbfs",
+   "description": "0.1초 오디오 RMS dBFS",
+   "samples": 11689
+  },
+  {
+   "column": "spectral_centroid_hz",
+   "description": "0.1초 스펙트럴 센트로이드 Hz",
+   "samples": 11689
+  }
+ ]
+}
