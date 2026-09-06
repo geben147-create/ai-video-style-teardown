@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Universal Video Production Orchestrator · 범용 영상 제작 에이전트</title>
+<style>
+:root{--bg:#f6f3ed;--panel:#fff;--ink:#17191d;--mut:#5d6570;--line:#ddd6cb;--red:#d6454f;--green:#197a58;--blue:#235da8;--amber:#a76a12;--chip:#eee9df}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#f9f7f2,#f2eee7);color:var(--ink);font:15px/1.72 -apple-system,BlinkMacSystemFont,"Pretendard","Malgun Gothic","Segoe UI",sans-serif;letter-spacing:-.01em}.w{max-width:1260px;margin:auto;padding:30px 24px 100px}a{color:var(--blue)}header{padding:30px 0 20px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:800}h1{font-size:clamp(32px,5vw,56px);line-height:1.07;letter-spacing:-.045em;margin:12px 0 15px}.lead{font-size:16px;color:var(--mut);max-width:950px}.nav{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0}.nav a{border:1px solid var(--line);background:var(--panel);padding:6px 11px;border-radius:999px;text-decoration:none;color:var(--ink);font-size:13px}.nav a:hover{border-color:var(--blue)}.badge{display:inline-flex;align-items:center;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:800}.manual{background:#fdebed;color:#b72f39;border:1px solid #f5c7cb}.auto{background:#e9f6ef;color:#126844;border:1px solid #c2e7d2}.gpt{background:#fff0e8;color:#b4491e;border:1px solid #ffd0ba}.source{background:#eaf1fc;color:#285b9d;border:1px solid #c9daf5}section{margin-top:44px}.st{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.st h2{font-size:24px;margin:0}.note{color:var(--mut);max-width:980px}.cards{display:grid;grid-template-columns:repeat(12,1fr);gap:13px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}.card h3{margin:0 0 7px;font-size:17px}.card p{margin:0;color:var(--mut)}.s4{grid-column:span 4}.s6{grid-column:span 6}.s8{grid-column:span 8}.s12{grid-column:span 12}.pipeline{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:18px 0}.stage{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px;min-height:118px}.stage b{display:block;font-size:12px;color:var(--blue);margin-bottom:5px}.stage strong{display:block;font-size:14px;line-height:1.3;margin-bottom:5px}.stage span{font-size:11.5px;color:var(--mut)}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}table{border-collapse:collapse;width:100%;min-width:900px}th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f3efe7;font-size:12px}td{font-size:13px;color:var(--mut)}td b{color:var(--ink)}pre{white-space:pre-wrap;word-break:break-word;background:#15181d;color:#eef2f7;border-radius:12px;padding:14px;overflow:auto;font:12.5px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}.flow{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:12px 0}.node{border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 9px;font-size:12px}.arrow{color:#999}.checks{columns:2;column-gap:30px;padding-left:20px;color:var(--mut)}.checks li{break-inside:avoid;margin:6px 0}.file{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#f1ece3;border-radius:6px;padding:2px 6px;font-size:12px}.callout{border-left:4px solid var(--red);padding:13px 16px;background:#fff5f5;border-radius:0 12px 12px 0}.footer{margin-top:58px;border-top:1px solid var(--line);padding-top:20px;color:var(--mut);font-size:12px}@media(max-width:980px){.pipeline{grid-template-columns:repeat(4,1fr)}.s4,.s6,.s8{grid-column:span 12}}@media(max-width:640px){.pipeline{grid-template-columns:repeat(2,1fr)}.checks{columns:1}.w{padding:20px 14px 70px}}
+</style></head><body><main class="w">
+<header><div class="eyebrow">UNIVERSAL VIDEO PRODUCTION ORCHESTRATOR v1</div><h1>주제만 바뀌어도 다시 쓸 수 있는<br>대본→자료조사→이미지→영상→편집 시스템</h1><p class="lead"><span class="badge gpt">🔴 [GPT] 추가 설계</span> 기존 프레임 계측 자료와 A/B/C/D 대본 벤치마크의 공통 구조를 <b>범용 작업 순서·에이전트 역할·JSON Schema·QC 게이트</b>로 변환한 실행 페이지다. 사람의 취향 결정은 빨간색으로 남기고, 반복 가능한 작업은 자동화 대상으로 분리한다.</p><div class="nav"><a href="index.html">분석 보고서</a><a href="gallery.html">갤러리</a><a href="style-lab.html">🔴 스타일 랩</a><a href="#pipeline">14단계</a><a href="#agents">에이전트</a><a href="#schemas">스키마</a><a href="#master">복붙 마스터 프롬프트</a></div></header>
+
+<section id="principle"><div class="st"><span class="badge source">SOURCE SYNTHESIS</span><h2>대본 엔진은 A+B+C+D 방식으로 잠근다</h2></div><div class="cards"><article class="card s4"><h3>A · 큰 구조</h3><p>비정상 결과 선공개 → 가치 증명 → 숨은 원인 → 해결책 → 중간 위기 → 부분 복구 → 남은 관문 → 더 큰 의미 → 현재 판정.</p></article><article class="card s4"><h3>B · 말의 연결</h3><p><b>질문 → 부분 답 → 새 질문</b>을 반복해 정보가 끝나지 않고 앞으로 미끄러지게 만든다.</p></article><article class="card s4"><h3>C + D · 화면과 TTS</h3><p>C처럼 막 전환·장면 회수를 설계하고, D처럼 <b>한 문장 한 정보</b>로 TTS를 짧게 자른다.</p></article></div></section>
+
+<section id="inputs"><div class="st"><span class="badge manual">🔴 MANUAL</span><h2>사용자가 매 프로젝트마다 직접 정할 것</h2></div><p class="note">이 여섯 개만 사람이 결정하고 나머지는 에이전트가 채우는 구조가 가장 안정적이다.</p><div class="tablewrap"><table><thead><tr><th>필수 입력</th><th>예시</th><th>왜 자동화하면 안 되는가</th></tr></thead><tbody>
+<tr><td><b>TOPIC</b></td><td>북극항로×부산, 메디치 은행, 데이터센터</td><td>채널의 사업·시청자 목표와 직결</td></tr><tr><td><b>TARGET AUDIENCE</b></td><td>40~60 남성 경제 관심층</td><td>훅·용어·CTA가 달라짐</td></tr><tr><td><b>RUN TIME</b></td><td>8:30 / 12:00 / 18:00</td><td>정보량과 컷 예산 결정</td></tr><tr><td><b>CHANNEL STYLE</b></td><td>Epic Route + Framed Archive</td><td>브랜드 일관성 핵심</td></tr><tr><td><b>MUST-USE REFERENCES</b></td><td>사용자 사진, 실제 지도, 논문 도판</td><td>시각 세계관과 근거의 출발점</td></tr><tr><td><b>FINAL CTA</b></td><td>찬반 댓글 / 리포트 / 구독</td><td>엔딩 구조를 역산하기 때문</td></tr>
+</tbody></table></div></section>
+
+<section id="pipeline"><div class="st"><span class="badge auto">🟢 AUTOMATABLE</span><h2>14단계 전체 파이프라인</h2></div><div class="pipeline">
+<div class="stage"><b>00</b><strong>Project Intake</strong><span>입력·금지·목표를 project.json으로 고정</span></div><div class="stage"><b>01</b><strong>Topic Radar</strong><span>NOW/Evergreen/상품 적합도 분리</span></div><div class="stage"><b>02</b><strong>Research Pack</strong><span>공식·논문·보도·반론·미확인</span></div><div class="stage"><b>03</b><strong>Claim Ledger</strong><span>대사별 근거·신뢰도·날짜</span></div><div class="stage"><b>04</b><strong>Story Engine</strong><span>Harmon 8 + A/B/C/D + open loops</span></div><div class="stage"><b>05</b><strong>Visual Evidence Map</strong><span>각 문장에 무엇을 보여줄지 1:1</span></div><div class="stage"><b>06</b><strong>Style Lock</strong><span>Primary/Secondary + 캐릭터 + 색 + 전환</span></div><div class="stage"><b>07</b><strong>Asset Bible</strong><span>인물·배경·소품·지도·데이터 시트</span></div><div class="stage"><b>08</b><strong>Storyboard</strong><span>scene_id, 목적, 시간, shot_type</span></div><div class="stage"><b>09</b><strong>Prompt Compile</strong><span>Image prompt / Video motion prompt 분리</span></div><div class="stage"><b>10</b><strong>Generation Queue</strong><span>Hero 10컷 승인 후 전체 확장</span></div><div class="stage"><b>11</b><strong>Continuity QC</strong><span>state_out → state_in / 방향 / 소품</span></div><div class="stage"><b>12</b><strong>Edit Plan</strong><span>TTS·BGM·SFX·자막·전환 타임라인</span></div><div class="stage"><b>13</b><strong>Final QA + Publish</strong><span>팩트·리텐션·썸네일·설명·분석 루프</span></div>
+</div></section>
+
+<section id="agents"><div class="st"><span class="badge gpt">🔴 [GPT]</span><h2>멀티 에이전트 역할 8개</h2></div><div class="cards">
+<article class="card s6"><h3>1. ORCHESTRATOR</h3><p>프로젝트 상태를 관리하고 다음 단계로 넘긴다. 동일 오류 2회면 자동 중단하고 사람 검수를 요청한다.</p></article><article class="card s6"><h3>2. RESEARCHER</h3><p>최신·공식·학술 자료를 수집한다. 모든 claim에 source_url, date, confidence를 붙이고 미확인은 미확인으로 남긴다.</p></article><article class="card s6"><h3>3. STORY ARCHITECT</h3><p>중심 질문 1개, open loop 2~4개, 30~45초마다 micro-payoff를 배치한다. 투자 연결은 역사/과학 몰입을 깨지 않는 후반부로 제한한다.</p></article><article class="card s6"><h3>4. VISUAL DIRECTOR</h3><p>한 장면=한 아이디어. 항공·POV·cutaway·X-ray·map morph를 의미가 있을 때만 선택한다.</p></article><article class="card s6"><h3>5. CONTINUITY SUPERVISOR</h3><p>얼굴, 의상, 손, 소품, 화면 방향, 날씨, 렌즈, 광원과 state_in/out을 잠근다.</p></article><article class="card s6"><h3>6. PROMPT COMPILER</h3><p>정지 이미지의 구성 지시와 영상의 움직임 지시를 분리한다. 한 클립에 카메라 1동작 + 피사체 1행동 원칙.</p></article><article class="card s6"><h3>7. EDITOR PLANNER</h3><p>문장/단어와 컷을 맞추고 SFX·BGM ducking·자막을 초 단위로 만든다. 통과 전환은 클립 경계에서 우선 사용.</p></article><article class="card s6"><h3>8. QA + PACKAGING</h3><p>팩트, 과장, 시각 중복, 리텐션, 썸네일·제목 약속 불일치를 체크한다. NOW 성과와 Evergreen 성과를 별도 평가한다.</p></article>
+</div></section>
+
+<section id="research"><div class="st"><span class="badge auto">🟢 AUTOMATABLE</span><h2>Research Pack 규칙</h2></div><div class="flow"><span class="node">공식 1차</span><span class="arrow">→</span><span class="node">논문/기관</span><span class="arrow">→</span><span class="node">신뢰 보도</span><span class="arrow">→</span><span class="node">반론/한계</span><span class="arrow">→</span><span class="node">Claim Ledger</span></div><div class="tablewrap"><table><thead><tr><th>필드</th><th>의미</th><th>규칙</th></tr></thead><tbody><tr><td><b>claim</b></td><td>대본에서 말할 한 문장</td><td>한 claim에 사실 하나</td></tr><tr><td><b>source_type</b></td><td>official / paper / news / archive</td><td>가능하면 1차 자료 우선</td></tr><tr><td><b>as_of</b></td><td>기준 시각</td><td>진행 중 사건은 반드시 표시</td></tr><tr><td><b>confidence</b></td><td>A/B/C</td><td>A=직접 확인, B=신뢰 보도 교차, C=가설/해석</td></tr><tr><td><b>counterpoint</b></td><td>반론/한계</td><td>투자·역사 연결 과장 방지</td></tr><tr><td><b>visual_evidence</b></td><td>지도/논문도판/사진/수치</td><td>말과 화면을 1:1로 맞춤</td></tr></tbody></table></div></section>
+
+<section id="story"><div class="st"><span class="badge source">SCRIPT ENGINE</span><h2>8분 30초 기본 리텐션 골격</h2></div><div class="tablewrap"><table><thead><tr><th>시간</th><th>기능</th><th>대본 질문</th><th>화면 역할</th></tr></thead><tbody><tr><td>0:00~0:35</td><td><b>비정상 결과 선공개</b></td><td>왜 이런 일이?</td><td>가장 영화적인 결과/역할 역전</td></tr><tr><td>0:35~1:20</td><td>대상의 가치</td><td>왜 봐야 하지?</td><td>인물/사물 한 개에 감정 잠금</td></tr><tr><td>1:20~2:20</td><td>통념 수정</td><td>진짜 원인은?</td><td>cutaway/X-ray</td></tr><tr><td>2:20~3:20</td><td>Research Reveal</td><td>새로 밝혀진 건?</td><td>실제 지도·논문·유물</td></tr><tr><td>3:20~4:20</td><td>해결책/시스템</td><td>어떻게 작동?</td><td>map morph / process</td></tr><tr><td>4:20~5:20</td><td>순조로움→균열</td><td>그런데 왜 실패?</td><td>색온도/속도 급변</td></tr><tr><td>5:20~6:20</td><td>부분 복구</td><td>해결됐나?</td><td>Before/After 수치</td></tr><tr><td>6:20~7:35</td><td>남은 관문 + 돈</td><td>무엇이 병목?</td><td>Money X-Ray</td></tr><tr><td>7:35~8:30</td><td>현재 판정 + 회수</td><td>A인가 B인가?</td><td>첫 소품/첫 이미지 회수</td></tr></tbody></table></div></section>
+
+<section id="visual"><div class="st"><span class="badge gpt">🔴 [GPT]</span><h2>Visual Evidence Map → Shot Contract</h2></div><pre>{
+  "scene_id": "S023",
+  "time": "03:42-03:50",
+  "narration": "길 하나가 아니라 거점이 네트워크를 살렸다.",
+  "visual_claim": "route nodes matter more than a single line",
+  "evidence": ["map_source_01", "paper_figure_02"],
+  "shot_type": "top_down_map_to_3d",
+  "camera_move": "slow push-in",
+  "subject_action": "route nodes illuminate sequentially",
+  "state_in": {"direction":"L2R","light":"sunset","prop":"red_route_line"},
+  "state_out": {"direction":"L2R","coverage":"cloud_wipe_95%","next_ready":true},
+  "duration_sec": 8,
+  "overlay_post_only": ["distance", "year", "source label"]
+}</pre><p class="note">핵심은 마지막 프레임이 다음 클립의 첫 프레임이 될 수 있게 <b>state_out을 미리 설계</b>하는 것이다. 생성 모델에게 ‘예쁘게 끝내라’가 아니라 ‘다음 액션이 가능한 상태로 끝내라’고 지시한다.</p></section>
+
+<section id="generation"><div class="st"><span class="badge auto">🟢 AUTOMATABLE</span><h2>생성 예산과 승인 순서</h2></div><div class="cards"><article class="card s4"><h3>Gate 1 · Hero 10</h3><p>전체 70~100컷을 만들기 전에 가장 어려운 10컷만 만든다. 캐릭터, 건축, X-ray, 대형 항공, 전환 컷을 반드시 포함.</p></article><article class="card s4"><h3>Gate 2 · Acceptance</h3><p>별책의 공개 사례 채택률은 대략 3.8~14.2% 범위였다. 이를 품질 보증값이 아니라 <b>예산 스트레스 테스트</b>로만 사용한다.</p></article><article class="card s4"><h3>Gate 3 · Expand</h3><p>Hero 10이 통과한 스타일·캐릭터·렌즈·색·transition whitelist만 전체 씬으로 확장한다.</p></article></div></section>
+
+<section id="qc"><div class="st"><span class="badge auto">🟢 QC</span><h2>자동 검수 체크리스트</h2></div><ul class="checks"><li>제목의 약속이 첫 30초와 본문에서 회수되는가</li><li>모든 사실 claim에 근거가 있는가</li><li>미확정 사건을 성공/실패로 단정하지 않았는가</li><li>30~45초마다 질문/부분 보상이 있는가</li><li>한 장면에 설명 2개 이상 들어가 있지 않은가</li><li>한 영상 클립에 카메라 동작 2개 이상 강제하지 않았는가</li><li>캐릭터 얼굴 정면 노출이 예산을 넘지 않는가</li><li>인물/의상/소품/스크린 방향이 이어지는가</li><li>state_out과 다음 state_in이 호환되는가</li><li>오버레이 텍스트는 이미지 생성이 아니라 후편집인가</li><li>스펙터클 피크가 너무 자주 반복되지 않는가</li><li>후반 투자 연결이 본문 근거에서 자연스럽게 도출되는가</li><li>특정 주식 추천처럼 읽히지 않고 판단 지표를 제공하는가</li><li>CTA가 영상의 중심 질문을 그대로 연장하는가</li></ul></section>
+
+<section id="schemas"><div class="st"><span class="badge gpt">🔴 [GPT]</span><h2>저장소에 추가한 스킬/스키마</h2></div><div class="cards"><article class="card s6"><h3><span class="file">SKILL.md</span></h3><p>오케스트레이터가 따라야 할 전체 운영 규칙, 단계별 입력/출력, 중단 조건.</p></article><article class="card s6"><h3><span class="file">agent.schema.json</span></h3><p>topic, audience, style, research, story, assets, output을 한 프로젝트 객체로 검증.</p></article><article class="card s6"><h3><span class="file">research-pack.schema.json</span></h3><p>Claim Ledger와 근거/날짜/반론/신뢰도 구조.</p></article><article class="card s6"><h3><span class="file">shot-contract.schema.json</span></h3><p>씬별 state_in/out, camera, action, evidence, duration 검증.</p></article><article class="card s12"><p><a href="skills/universal-video-orchestrator/SKILL.md">SKILL.md 열기</a> · <a href="skills/universal-video-orchestrator/agent.schema.json">agent.schema.json</a> · <a href="skills/universal-video-orchestrator/research-pack.schema.json">research-pack.schema.json</a> · <a href="skills/universal-video-orchestrator/shot-contract.schema.json">shot-contract.schema.json</a> · <a href="skills/universal-video-orchestrator/style-profiles.json">style-profiles.json</a></p></article></div></section>
+
+<section id="master"><div class="st"><span class="badge manual">🔴 COPY/PASTE</span><h2>Codex / Claude / GPT에 넣는 범용 마스터 프롬프트</h2></div><pre>너는 UNIVERSAL VIDEO PRODUCTION ORCHESTRATOR다.
+
+[필수 입력]
+TOPIC: {{topic}}
+TARGET_AUDIENCE: {{audience}}
+RUN_TIME: {{runtime}}
+CHANNEL_STYLE: {{primary_style}} + {{secondary_style}}
+MUST_USE_REFERENCES: {{references}}
+FINAL_CTA: {{cta}}
+FORBIDDEN: {{forbidden}}
+AS_OF: {{date_time}}
+
+[작업 순서]
+1. 자료조사 전에 중심 질문 1개와 검증해야 할 주장 목록을 만든다.
+2. 공식 1차자료 → 논문/기관 → 신뢰보도 순으로 Research Pack을 만든다.
+3. 각 claim에 source/date/confidence/counterpoint를 붙인다. 확인되지 않은 것은 추정으로 분리한다.
+4. 대본은 A의 큰 구조 + B의 질문→부분답→새질문 + C의 장면 회수 + D의 한문장 한정보를 따른다.
+5. 8단계 Harmon Circle을 사용하되 30~45초마다 micro-payoff를 둔다.
+6. 각 대사 1~2문장마다 visual_claim을 만들고 실제 자료가 있으면 우선 사용한다.
+7. STYLE_PROFILE을 잠그고 character/background/prop bible을 만든다.
+8. 먼저 Hero 10 storyboard만 생성한다. 내가 승인하기 전 전체 씬으로 확장하지 않는다.
+9. 정지 이미지 프롬프트와 영상 모션 프롬프트를 분리한다.
+10. 영상 프롬프트는 one camera move + one subject action만 허용한다.
+11. 모든 씬에 state_in/state_out을 작성해 다음 씬과 연결한다.
+12. 이미지 내부 텍스트 생성은 금지하고 수치·자막·지도 라벨은 후편집용 overlay로 분리한다.
+13. 최종 산출물: Research Pack / Script / TTS / Visual Evidence Map / Asset Bible / Storyboard / Image Prompts / Video Prompts / Edit Timeline / QC Report / Publish Pack.
+
+[중단 규칙]
+- 동일한 생성 오류 2회 반복
+- 출처 충돌이 해결되지 않음
+- 캐릭터/장소 continuity가 Hero 10에서 실패
+- 제목 약속과 대본 결론이 불일치
+위 조건이면 자동 확장하지 말고 RED FLAG를 출력한다.</pre></section>
+
+<section id="folder"><div class="st"><span class="badge auto">🟢 PROJECT LAYOUT</span><h2>권장 폴더 구조</h2></div><pre>project/
+  00_input/project.json
+  01_research/research-pack.json
+  01_research/sources/
+  02_script/script_master.md
+  02_script/script_tts.txt
+  03_style/style_profile.json
+  03_style/character_bible.md
+  03_style/background_bible.md
+  03_style/prop_bible.md
+  04_storyboard/shot_contracts.json
+  04_storyboard/hero10/
+  05_prompts/image_prompts.json
+  05_prompts/video_prompts.json
+  06_generations/stills/
+  06_generations/clips/
+  07_edit/edit_timeline.json
+  08_qc/qc_report.md
+  09_publish/title_thumbnail_description.md</pre></section>
+
+<div class="callout"><b>🔴 사람이 마지막으로 확인할 네 가지</b><br>① 이 주제가 정말 내 채널에 맞는가 ② 이 스타일이 다른 채널과 구별되는가 ③ 최신 사실의 기준 시각이 맞는가 ④ CTA가 정보 영상에 난입하지 않는가. 이 네 가지는 자동화보다 사람의 취향·사업 판단이 더 중요하다.</div>
+<footer class="footer">비주얼 규칙은 <a href="style-lab.html">Style Lab</a>, 원본 계측은 <a href="index.html">17절 분석 보고서</a>, 캡처 근거는 <a href="gallery.html">Gallery</a>에서 분리해 확인한다.</footer>
+</main></body></html>
