@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Video Style Lab · 채널별 비주얼 브랜딩 시스템</title>
+<style>
+:root{--bg:#0c0f14;--panel:#131823;--panel2:#171e2b;--ink:#f5f2ea;--mut:#aab2c0;--line:#2a3446;--red:#ff5b67;--cyan:#7ee7dc;--gold:#f3c26b;--blue:#83a7ff;--green:#82d89f;--violet:#c8a2ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 8% 0,#1a2434 0,transparent 28%),var(--bg);color:var(--ink);font:15px/1.72 -apple-system,BlinkMacSystemFont,"Pretendard","Malgun Gothic","Segoe UI",sans-serif;letter-spacing:-.01em}a{color:var(--cyan)}.wrap{max-width:1240px;margin:auto;padding:28px 24px 96px}.hero{padding:38px 0 24px}.kicker{font-size:12px;letter-spacing:.14em;color:var(--cyan);font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.05;margin:12px 0 16px;letter-spacing:-.045em}.hero p{max-width:900px;color:var(--mut);font-size:16px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 6px}.nav a{border:1px solid var(--line);background:#111722;color:var(--ink);border-radius:999px;padding:7px 12px;text-decoration:none;font-size:13px}.nav a:hover{border-color:var(--cyan)}.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:800;letter-spacing:.03em}.gpt{background:rgba(255,91,103,.14);color:#ff9ca4;border:1px solid rgba(255,91,103,.34)}.measured{background:rgba(126,231,220,.12);color:var(--cyan);border:1px solid rgba(126,231,220,.3)}.user{background:rgba(243,194,107,.12);color:var(--gold);border:1px solid rgba(243,194,107,.34)}section{margin-top:46px}.section-title{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.section-title h2{font-size:24px;margin:0;letter-spacing:-.025em}.note{color:var(--mut);max-width:960px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{background:linear-gradient(180deg,var(--panel),#10151f);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 12px 36px rgba(0,0,0,.15)}.card h3{margin:0 0 7px;font-size:17px}.card p{margin:0;color:var(--mut)}.span6{grid-column:span 6}.span4{grid-column:span 4}.span8{grid-column:span 8}.span12{grid-column:span 12}.refboard{width:100%;display:block;border-radius:14px;border:1px solid var(--line);background:#090b0e;max-height:690px;object-fit:contain}.small{font-size:12.5px;color:var(--mut)}.metric{display:grid;grid-template-columns:1fr auto;gap:8px;border-bottom:1px dashed var(--line);padding:10px 0}.metric:last-child{border:0}.metric strong{font-size:18px}.styles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.style{position:relative;overflow:hidden;min-height:330px}.style:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--accent,var(--cyan))}.style h3{font-size:20px}.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}.chip{font-size:11.5px;padding:4px 8px;border-radius:999px;background:#0c121b;border:1px solid var(--line);color:#c8cfda}.kv{display:grid;grid-template-columns:92px 1fr;gap:6px 10px;font-size:13px;margin-top:12px}.kv b{color:#dce2ed}.kv span{color:var(--mut)}.camera{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cam{border-left:3px solid var(--blue);padding-left:13px}.cam b{display:block;margin-bottom:3px}.cam span{color:var(--mut);font-size:13px}.timeline{display:grid;grid-template-columns:repeat(8,1fr);gap:7px;margin:16px 0}.beat{border:1px solid var(--line);background:#111722;border-radius:10px;padding:12px 8px;text-align:center;font-size:12px;min-height:76px}.beat em{display:block;color:var(--gold);font-style:normal;font-weight:800;margin-bottom:4px}.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:14px}.good{border-color:rgba(130,216,159,.35)}.bad{border-color:rgba(255,91,103,.35)}ul{padding-left:19px;margin:8px 0;color:var(--mut)}li{margin:5px 0}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;min-width:900px;background:#10151e}th,td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{font-size:12px;color:#d7ddea;background:#151c28;position:sticky;top:0}td{font-size:13px;color:var(--mut)}td b{color:var(--ink)}pre{white-space:pre-wrap;word-break:break-word;background:#090d13;border:1px solid var(--line);border-radius:12px;padding:14px;color:#dbe4ef;font:12.5px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}.footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:var(--mut);font-size:12px}
+@media(max-width:900px){.styles{grid-template-columns:1fr 1fr}.span6,.span4,.span8{grid-column:span 12}.camera{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:620px){.styles{grid-template-columns:1fr}.do-dont{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,1fr)}.wrap{padding:20px 15px 70px}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="hero">
+<div class="kicker">AI VIDEO STYLE LAB · 2026.09.06</div>
+<h1>채널마다 다른 세계관을 만들되,<br>카메라는 같은 문법으로 움직인다.</h1>
+<p><span class="badge gpt">🔴 [GPT] 추가 설계</span> 이 페이지는 기존 딥 호라이즌 프레임 분석을 수정하지 않고, 그 위에 <b>사용자 제공 레퍼런스 보드 + 채널별 스타일 프로필 + 브랜딩 캐릭터 + 카메라/전환 구현 규칙</b>을 별도 레이어로 추가한 실전 스타일 랩이다. <b>새 이미지는 생성하지 않았다.</b> 아래 레퍼런스 이미지는 사용자가 제공한 보드를 웹 표시용으로만 압축해 포함했다.</p>
+<div class="nav"><a href="index.html">분석 보고서</a><a href="gallery.html">딥 호라이즌 갤러리</a><a href="methods.html">제작자 10인 별책</a><a href="production-agent.html">🔴 범용 제작 에이전트</a><a href="#profiles">스타일 6종</a><a href="#camera">카메라 문법</a><a href="#channels">채널 매칭</a></div>
+</header>
+
+<section id="refs">
+<div class="section-title"><span class="badge user">USER REF</span><h2>사용자 레퍼런스 보드</h2></div>
+<p class="note">여기서 가져오는 것은 <b>디자인 구조, 질감, 화면 깊이, 프레이밍, 이동감, 포털/문/책/지도/미니어처 같은 구현 아이디어</b>다. 특정 작품의 캐릭터나 장면을 복제하지 않는다.</p>
+<div class="grid">
+<article class="card span6"><img class="refboard" src="assets/user_refs/reference_board_a.svg" alt="사용자 제공 레퍼런스 보드 A"><p class="small">A · 종이 절개/해부 구조, 블루 패브릭 편집, 판타지 해상 스케일, 문·포털, 꽃잎, 3D 도시 모형, 손이 지도를 짚는 오버숄더, 삽화 지도, 도시 콜라주.</p></article>
+<article class="card span6"><img class="refboard" src="assets/user_refs/reference_board_b.svg" alt="사용자 제공 레퍼런스 보드 B"><p class="small">B · 1인칭 승마/라이드, 액자 속 세계, 수로/정원, 몰입형 식생, 재난 대비 장면, 공중 여행, 미래도시 미니어처, 문·포털 반복.</p></article>
+</div>
+</section>
+
+<section id="measured">
+<div class="section-title"><span class="badge measured">MEASURED</span><h2>딥 호라이즌 분석에서 그대로 가져갈 것</h2></div>
+<div class="grid">
+<article class="card span4"><div class="metric"><span>통과형 전환</span><strong>25.4%</strong></div><p>구름·아치·벽·인물·연기처럼 화면을 완전히 덮는 물체를 통과하며 컷 경계를 감춘다. 서로 다른 생성 클립의 연결 실패를 정보 차폐로 해결한다.</p></article>
+<article class="card span4"><div class="metric"><span>난색 서사 곡선</span><strong>56.9→7.8%</strong></div><p>황금기에는 난색 비중을 끌어올리고, 몰락기에는 냉색으로 급감시킨 뒤 유산 구간에서 다시 회복한다. 컷 하나가 아니라 <b>영상 전체 색 곡선</b>을 설계한다.</p></article>
+<article class="card span4"><div class="metric"><span>얼굴 노출</span><strong>&lt;5%</strong></div><p>정면 얼굴을 거의 쓰지 않고 후면, 실루엣, 작은 인물, 손·소품, 모션 블러로 처리한다. 캐릭터 일관성 비용을 줄이면서 규모감을 키운다.</p></article>
+<article class="card span12"><img class="refboard" style="max-height:520px" src="assets/fig1_visual_style.jpg" alt="기존 딥 호라이즌 분석 도판 1"><p class="small">기존 저장소 도판을 그대로 참조. 이 페이지의 새 스타일은 이 회화적 시네마틱 베이스 위에 사용자 레퍼런스의 포털·종이·POV·미니어처 문법을 선택적으로 얹는다.</p></article>
+</div>
+</section>
+
+<section id="profiles">
+<div class="section-title"><span class="badge gpt">🔴 [GPT]</span><h2>스타일 프로필 6종</h2></div>
+<p class="note">한 채널은 1개의 Primary와 1개의 Secondary만 선택한다. 모든 스타일을 섞으면 브랜드가 아니라 샘플러가 된다.</p>
+<div class="styles">
+<article class="card style" style="--accent:#f3c26b"><h3>01 · Epic Route Chronicle</h3><div class="chips"><span class="chip">역사</span><span class="chip">경제</span><span class="chip">제국</span><span class="chip">항로</span></div><p>딥 호라이즌의 거대한 평원·도시·전쟁 스케일에 사용자 보드의 승마 POV와 포털 진입을 더한 버전.</p><div class="kv"><b>브랜드 캐릭터</b><span>청동빛 매 / 등장 4~6%, 설명하지 않고 이동만 한다.</span><b>브랜드 소품</b><span>붉은 실로 묶인 편지·지도.</span><b>대표 앵글</b><span>후방 추적 → 절벽/아치 통과 → 드론 풀아웃.</span><b>색</b><span>Ochre + deep teal + crimson route accent.</span><b>금지</b><span>용·마법을 역사 사실처럼 보이게 하는 연출.</span></div></article>
+<article class="card style" style="--accent:#e7e2d6"><h3>02 · Paper Cutaway Atlas</h3><div class="chips"><span class="chip">건축</span><span class="chip">부동산</span><span class="chip">도시</span><span class="chip">인프라</span></div><p>흰 종이 단면, 접힌 도시, 지형이 잘리는 구조를 중심으로 건물·땅·돈의 메커니즘을 ‘물성 있는 지도’처럼 보여준다.</p><div class="kv"><b>브랜드 캐릭터</b><span>얼굴 없는 Surveyor. 차콜 코트, 뒤/옆모습만.</span><b>브랜드 소품</b><span>빨간 측량핀·실·자.</span><b>대표 앵글</b><span>탑다운 → 손이 지도를 짚음 → 종이가 접히며 실제 도시.</span><b>색</b><span>Ivory paper + graphite + one red marker.</span><b>금지</b><span>한 프레임에 건축 구조와 금융 구조를 동시에 과적.</span></div></article>
+<article class="card style" style="--accent:#82d89f"><h3>03 · Botanical Door Cinema</h3><div class="chips"><span class="chip">여행</span><span class="chip">문화</span><span class="chip">뷰티</span><span class="chip">공간</span></div><p>문을 열면 다른 도시/시대/장소가 나타나는 고급 포털 다큐. 꽃잎, 물, 커튼, 유리문을 전환 차폐물로 사용한다.</p><div class="kv"><b>브랜드 캐릭터</b><span>Blue-Scarf Traveller. 정면보다 뒷모습.</span><b>브랜드 소품</b><span>청색 스카프 + 작은 금속 키.</span><b>대표 앵글</b><span>door push-through → garden glide → water reflection match.</span><b>색</b><span>Jade + floral red + cream daylight.</span><b>금지</b><span>꽃 장면을 매 컷 넣어 광고 필름처럼 단조롭게 만들기.</span></div></article>
+<article class="card style" style="--accent:#83a7ff"><h3>04 · POV Ride-Through</h3><div class="chips"><span class="chip">모험</span><span class="chip">과거 여행</span><span class="chip">현장감</span></div><p>승마, 배, 열차, 드론, 새의 등 뒤를 따라가며 시청자가 공간을 ‘통과’하게 만든다. 롤러코스터 샷은 피크에서만 사용.</p><div class="kv"><b>브랜드 캐릭터</b><span>캐릭터 대신 이동수단을 브랜드화. 흰 말 / 청동 안장 / 동일 실루엣.</span><b>브랜드 소품</b><span>안장 앞 붉은 매듭.</span><b>대표 앵글</b><span>1인칭 → low pass-under → canyon split → wide reveal.</span><b>색</b><span>현장 자연색 + 단일 브랜드 악센트.</span><b>금지</b><span>8분 내내 고속 이동. 45~90초마다 한 번만 피크.</span></div></article>
+<article class="card style" style="--accent:#7ee7dc"><h3>05 · Miniature Money X-Ray</h3><div class="chips"><span class="chip">주식</span><span class="chip">ETF</span><span class="chip">산업</span><span class="chip">데이터</span></div><p>도시·항만·데이터센터를 축소 모형처럼 띄운 뒤, 지붕/땅을 제거해 전력·물류·현금흐름을 실제 배관처럼 보여준다.</p><div class="kv"><b>브랜드 캐릭터</b><span>Silver Dragonfly. 데이터 노드를 따라 이동하는 작은 안내자.</span><b>브랜드 소품</b><span>유리 구슬/노드.</span><b>대표 앵글</b><span>isometric city → vertical cutaway → pipeline fly-through.</span><b>색</b><span>Graphite + cyan data + amber money node.</span><b>금지</b><span>기업 로고를 장식처럼 과다 삽입.</span></div></article>
+<article class="card style" style="--accent:#c8a2ff"><h3>06 · Framed Archive Gateway</h3><div class="chips"><span class="chip">가문</span><span class="chip">인물</span><span class="chip">비즈니스 역사</span></div><p>초상화·편지·액자·책 한 페이지에서 출발해 그림 속 세계로 진입한다. Dynastic형 소재를 영화화할 때 특히 강하다.</p><div class="kv"><b>브랜드 캐릭터</b><span>Black Owl Curator. 액자 앞 실루엣만, 말하지 않음.</span><b>브랜드 소품</b><span>검은 액자 + 붉은 봉인.</span><b>대표 앵글</b><span>macro artifact → frame dive → historical world → frame return.</span><b>색</b><span>Ink black + antique gold + wine red.</span><b>금지</b><span>실존 인물의 얼굴을 매 장면 AI로 재현.</span></div></article>
+</div>
+</section>
+
+<section id="camera">
+<div class="section-title"><span class="badge gpt">🔴 [GPT]</span><h2>카메라·앵글 구현 라이브러리</h2></div>
+<p class="note">딥 호라이즌 측정 데이터에는 좌→우/우→좌 팬, 상승·하강 틸트, 푸시인·풀백 조합이 반복된다. 아래는 그 기반을 사용자 보드의 문·지도·POV·액자 문법으로 확장한 구현안이다.</p>
+<div class="camera">
+<div class="card cam"><b>1. Rear Chase</b><span>말·새·배·캐릭터의 등 뒤 1~2m를 따라간다. 방향은 한 컷에서 고정.</span></div>
+<div class="card cam"><b>2. Portal Push-Through</b><span>문/아치/액자의 중앙으로 밀고 들어가 화면이 80~100% 차폐되는 순간 다음 세계로 전환.</span></div>
+<div class="card cam"><b>3. Pass-Under Wipe</b><span>말의 배, 다리, 크레인, 현수막 아래를 통과하며 블랙아웃/차폐 컷.</span></div>
+<div class="card cam"><b>4. Top-Down Dive</b><span>도시·협곡·항만을 수직으로 내려가 한 개의 표적/건물/길에 잠금.</span></div>
+<div class="card cam"><b>5. Canyon Split Reveal</b><span>지형을 옆에서 따라가다 단면이 열려 지하/내부 구조가 드러난다.</span></div>
+<div class="card cam"><b>6. Map Hand OTS</b><span>손·펜·지도는 전경, 실제 3D 지형은 배경. 손의 이동 방향과 다음 카메라 방향을 일치.</span></div>
+<div class="card cam"><b>7. Macro → World</b><span>동전·열쇠·편지·유리병 극접사에서 시작해 표면/모양을 지도·도시로 match cut.</span></div>
+<div class="card cam"><b>8. Miniature Orbit</b><span>도시/건축 모형을 15~25°만 오비트. 한 컷에서 오비트+줌+틸트를 모두 하지 않는다.</span></div>
+<div class="card cam"><b>9. Reflection Gate</b><span>수면·유리·금속 반사에 다음 장면을 먼저 보인 뒤 카메라가 반사면을 통과.</span></div>
+<div class="card cam"><b>10. Paper Fold Morph</b><span>지도/종이가 접히며 능선·건물·도로가 실제 3D 구조로 솟는다.</span></div>
+<div class="card cam"><b>11. Low Orbit Hero</b><span>인물·건축·선박의 권위/규모를 보여줄 때 낮은 높이에서 느린 반원 이동.</span></div>
+<div class="card cam"><b>12. Wide Still Reward</b><span>고속 피크 뒤 2~4초 거의 정지된 대칭 와이드로 보상. 모든 장면이 움직이면 ‘큰 장면’이 사라진다.</span></div>
+</div>
+</section>
+
+<section id="transitions">
+<div class="section-title"><span class="badge measured">MEASURED +</span><span class="badge gpt">🔴 [GPT]</span><h2>전환 문법: 측정된 것과 새로 추가한 것 분리</h2></div>
+<div class="tablewrap"><table><thead><tr><th>전환</th><th>근거</th><th>구현</th><th>가장 잘 맞는 채널</th></tr></thead><tbody>
+<tr><td><b>차폐물 와이프</b></td><td>딥 호라이즌 측정</td><td>벽·인물·연기·말·깃발이 화면을 덮는 프레임에서 컷</td><td>전 채널</td></tr>
+<tr><td><b>화이트아웃 통과</b></td><td>딥 호라이즌 측정</td><td>구름·안개·빛·물보라로 밝게 포화 후 다음 컷</td><td>역사·여행</td></tr>
+<tr><td><b>블랙아웃 통과</b></td><td>딥 호라이즌 측정</td><td>아치·터널·야간 물체가 렌즈를 완전히 덮음</td><td>역사·산업</td></tr>
+<tr><td><b>Door / Frame Portal</b></td><td>🔴 사용자 레퍼런스 기반 추가</td><td>문·액자 내부의 원근점을 다음 공간의 원근점과 일치</td><td>여행·인물</td></tr>
+<tr><td><b>Paper Fold Morph</b></td><td>🔴 사용자 레퍼런스 기반 추가</td><td>종이 절개선이 산맥/건물 윤곽선으로 변함</td><td>건축·부동산</td></tr>
+<tr><td><b>POV Ride Match</b></td><td>🔴 사용자 레퍼런스 기반 추가</td><td>말/배/드론의 진행 벡터를 다음 장면까지 유지</td><td>역사·모험</td></tr>
+<tr><td><b>Miniature → Reality</b></td><td>🔴 사용자 레퍼런스 기반 추가</td><td>축소 도시의 한 건물을 push-in해 실제 규모 장면으로</td><td>투자·도시</td></tr>
+<tr><td><b>Object Shape Match</b></td><td>🔴 추가 설계</td><td>동전→원형 광장, 열쇠→항로, 실→데이터선처럼 형태만 연결</td><td>경제·가문</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="channels">
+<div class="section-title"><span class="badge gpt">🔴 [GPT]</span><h2>채널마다 이렇게 다르게</h2></div>
+<div class="tablewrap"><table><thead><tr><th>채널</th><th>Primary</th><th>Secondary</th><th>브랜딩 캐릭터</th><th>시그니처 소품</th><th>스펙터클 피크</th></tr></thead><tbody>
+<tr><td><b>역사 × 경제</b></td><td>Epic Route Chronicle</td><td>Framed Archive</td><td>청동 매</td><td>붉은 편지</td><td>대륙 비행, 전쟁/항로, 지도→현실</td></tr>
+<tr><td><b>부동산 × 건축</b></td><td>Paper Cutaway Atlas</td><td>Miniature Money X-Ray</td><td>Faceless Surveyor</td><td>빨간 측량핀</td><td>토지 단면, zoning, 건물 생성</td></tr>
+<tr><td><b>주식 × 산업</b></td><td>Miniature Money X-Ray</td><td>Paper Cutaway</td><td>Silver Dragonfly</td><td>유리 데이터 노드</td><td>공장/데이터센터 내부 fly-through</td></tr>
+<tr><td><b>여행 × 문화</b></td><td>Botanical Door Cinema</td><td>POV Ride-Through</td><td>Blue-Scarf Traveller</td><td>금속 키</td><td>문을 열 때 도시가 교체되는 순간</td></tr>
+<tr><td><b>가문 × 비즈니스 역사</b></td><td>Framed Archive Gateway</td><td>Epic Route</td><td>Black Owl Curator</td><td>검은 액자·봉인</td><td>초상화→도시→금융망 X-ray</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="rhythm">
+<div class="section-title"><span class="badge gpt">🔴 [GPT]</span><h2>8분 30초 스펙터클 리듬</h2></div>
+<p class="note">롤러코스터·비행·급강하를 계속 쓰지 않는다. <b>대형 쇼 4회</b>만 배치하고 그 사이에는 사물·인물·X-ray·정지 와이드로 대비를 만든다.</p>
+<div class="timeline">
+<div class="beat"><em>0:00</em>Portal/POV<br>첫 대형 피크</div><div class="beat"><em>0:45</em>인물·사물<br>속도 낮춤</div><div class="beat"><em>1:40</em>Cutaway<br>원리 리빌</div><div class="beat"><em>2:40</em>Wide Flight<br>두 번째 피크</div><div class="beat"><em>4:10</em>Map Morph<br>세 번째 피크</div><div class="beat"><em>5:30</em>위기·정지<br>대비</div><div class="beat"><em>6:40</em>Money X-Ray<br>네 번째 피크</div><div class="beat"><em>8:05</em>첫 소품 회수<br>정지 엔딩</div>
+</div>
+</section>
+
+<section id="rules">
+<div class="section-title"><span class="badge gpt">🔴 [GPT]</span><h2>브랜딩 캐릭터 운영 규칙</h2></div>
+<div class="do-dont"><article class="card good"><h3>✓ 해야 할 것</h3><ul><li>러닝타임의 4~8%만 등장</li><li>정보를 말하는 마스코트가 아니라 <b>이동·전환·회수 장치</b>로 사용</li><li>정면 얼굴보다 실루엣/후면/손/소품</li><li>매 편 동일한 1개 소품을 반복</li><li>오프닝과 엔딩에서 같은 행동을 반대로 회수</li></ul></article><article class="card bad"><h3>✕ 피해야 할 것</h3><ul><li>매 장면 캐릭터를 넣어 키즈 채널화</li><li>판타지 캐릭터의 행동을 역사적 사실처럼 서술</li><li>한 캐릭터에 설명·감정·코미디·CTA를 전부 맡김</li><li>화려한 카메라 2개 이상을 한 생성 클립에 강제</li><li>채널마다 같은 매/부엉이/고양이를 색만 바꿔 복제</li></ul></article></div>
+</section>
+
+<section id="profile-json">
+<div class="section-title"><span class="badge gpt">🔴 [GPT]</span><h2>제작 에이전트에 넘길 STYLE_PROFILE 예시</h2></div>
+<pre>{
+  "channel": "history_economy",
+  "primary_style": "epic_route_chronicle",
+  "secondary_style": "framed_archive_gateway",
+  "brand_character": {"name":"bronze_falcon","screen_time_pct":"4-6","speech":false},
+  "signature_prop": "red_sealed_letter",
+  "camera_peaks": ["rear_chase","portal_push_through","top_down_dive","money_xray_flythrough"],
+  "transition_whitelist": ["occlusion_wipe","whiteout","blackout","frame_portal","shape_match"],
+  "face_budget_pct_max": 5,
+  "one_clip_rule": "one camera move + one subject action",
+  "continuity": "state_out -> state_in"
+}</pre>
+<p class="small">전체 범용 파이프라인과 JSON Schema는 <a href="production-agent.html">production-agent.html</a> 및 <a href="skills/universal-video-orchestrator/SKILL.md">SKILL.md</a>에 분리해 두었다.</p>
+</section>
+
+<footer class="footer">원본 딥 호라이즌 계측 자료는 기존 <a href="index.html">분석 보고서</a>와 <a href="gallery.html">갤러리</a>를 유지한다. 이 페이지에서 <span class="badge gpt">🔴 [GPT]</span>가 붙은 항목은 측정값 자체가 아니라 사용자 레퍼런스와 기존 계측 원리를 결합해 새로 설계한 제작 규칙이다.</footer>
+</main></body></html>
