@@ -1,6 +1,6 @@
 # AI 역사 다큐 영상 제작 원리 해부
 
-[**▶ 분석 보고서 (17절)**](https://geben147-create.github.io/ai-video-style-teardown/) · [**▶ 캡처 갤러리**](https://geben147-create.github.io/ai-video-style-teardown/gallery.html)
+[**▶ 분석 보고서 (17절)**](https://geben147-create.github.io/ai-video-style-teardown/) · [**▶ 캡처 갤러리**](https://geben147-create.github.io/ai-video-style-teardown/gallery.html) · [**▶ 별책 — 세계 AI 영상 제작자 10인**](https://geben147-create.github.io/ai-video-style-teardown/methods.html)
 
 완성된 롱폼 영상 1편을 프레임 단위로 전수 계측해, **다른 주제에도 그대로 이식할 수 있는 제작 규격서**로 되돌린 자료입니다.
 측정값·캡처·시계열 원본·분석 스크립트를 전부 포함했습니다.
@@ -11,6 +11,56 @@
 - **측정일** — 2026-09-05 (유튜브 공개 지표는 2026-09-06 재확인: 조회 52.1만 / 좋아요 7,373 / 댓글 313)
 
 분석 대상은 채널 운영자 본인의 제작물입니다. 외부 영상을 뜯어본 것이 아니라, **이미 만든 결과물을 수치로 되돌려 재사용 가능한 규격으로 만든 것**입니다.
+
+---
+
+## 별책 — 세계 AI 영상 제작자 10인 · 방법 · 수치 · 원문 · 프롬프트
+
+[**▶ methods.html**](https://geben147-create.github.io/ai-video-style-teardown/methods.html)
+
+본 보고서는 **완성된 영상 1편을 프레임 단위로 되돌린 것**이라 "이 채널이 실제로 무엇을 했는가"만 담고 있습니다.
+**다른 제작자들은 같은 문제를 어떻게 풀었는가**가 비어 있었고, 별책이 그 빈칸입니다.
+
+10인 선정 기준은 유명세가 아니라 **검증 가능한 숫자를 공개했는가** 하나입니다.
+각 인물마다 **이름 · 대표작 · 수치 · 영어 원문 인용 · 출처 링크 · 그대로 쓰는 프롬프트**를 한 카드에 담았습니다.
+
+| # | 이름 | 대표작 | 핵심 수치 |
+|---|---|---|---|
+| 01 | PJ Accetturo | Kalshi NBA 파이널 광고 | 1인 · 2~3일 · 약 $2,000 · 300~400생성 → 15컷 |
+| 02 | shy kids (Patrick Cederberg) | Air Head | 소스 대 완성 약 300:1 (분량 기준) |
+| 03 | Paul Trillo | Washed Out 「The Hardest Part」 | 700생성 → 55컷 (7.9%) |
+| 04 | Nicolas Neubert | GENESIS | 7시간 · $125 · 310영상 → 44컷 (14.2%) |
+| 05 | Neural Viz | Monoverse | 1인 운영 · 구독 약 23.8만 |
+| 06 | Eliza McNitt · Darren Aronofsky | ANCESTRA | 아티스트·기술자 200명 이상 |
+| 07 | Dave Clark | Promise / MUSE | 프롬프트·설정·승인 전건 기록 |
+| 08 | Bryn Mooser · Natasha Lyonne | Uncanny Valley / Marey | 저작권 정리 데이터만으로 학습 |
+| 09 | Kavan Cardoza | The Chronicles of Bone | 가면·소품 실물 선제작 |
+| 10 | Chad Nelson | Critterz | 예산 $3,000만 미만 · 약 9개월 (칸 데뷔는 무산) |
+
+### 별책에서 나온 가장 실용적인 수치 — 채택률
+
+일정과 비용을 실제로 결정하는 단 하나의 숫자는 **몇 개 생성해서 몇 개를 쓰는가**입니다.
+
+| 사례 | 생성 | 사용 | 채택률 | 사용 1컷당 생성 |
+|---|---|---|---|---|
+| Neubert · GENESIS | 310 | 44 | **14.2%** | 약 7.0회 |
+| Trillo · The Hardest Part | 700 | 55 | **7.9%** | 약 12.7회 |
+| Accetturo · Kalshi | 300~400 | 15 | **3.8~5.0%** | 약 20~27회 |
+
+shy kids 의 300:1 은 **분량(초) 기준**이고 본인이 "내 계산은 엉망이지만"이라고 전제한 어림값이라
+위 세 줄(클립 개수 기준)과 **같은 표에서 줄 세우면 안 됩니다.**
+
+중앙값 7.9%를 이 영상의 추정 장면 수 115개에 적용하면 **생성 예산은 약 800~2,900회**입니다.
+이 범위를 모르고 "컷당 2~3번이면 되겠지"로 잡으면 일정이 5~10배 어긋납니다.
+
+### 별책의 한계 — 원문 페이지를 직접 열지 못했습니다
+
+별책을 만든 세션은 외부 웹 직접 접속이 조직 정책상 차단(프록시 403)돼 있었습니다.
+따라서 각 기사·게시물을 **열어서 통독한 것이 아니라**, 검색 결과에 노출된 원문 카드와
+완전일치 구문 재검색으로 확인했습니다. 그래서 인용문마다 **A / B / C 검증 등급**을 붙였고,
+확인하지 못한 항목은 [별책 15절](https://geben147-create.github.io/ai-video-style-teardown/methods.html#s15)에 전부 나열했습니다.
+
+10인은 **객관적 순위가 아닙니다.** 영어권 매체 검색으로 골랐기 때문에 한국·중국·일본어권 제작자가 구조적으로 빠져 있습니다.
 
 ---
 
